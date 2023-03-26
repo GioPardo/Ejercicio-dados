@@ -1,0 +1,102 @@
+/* para importar la fuente */
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap);
+
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Para poner color de fondo */
+  background: #333;
+  /* Para cambiar el color de la letra */
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+    /* Para dar un margen alrededor del titulo */
+    padding: 25px;
+}
+h1{
+    /* Para cambiar el espesor de la letra */
+    font-weight:600;
+    /* Para cambiar a mayusculas */
+    text-transform: uppercase;
+}
+/* Para que los dados se ubiquen de forma horizontal y centrados */
+section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* Para dar forma a los dados, ajustar su ancho, altura, color de fondo y conportamiento de los puntos en su interior */
+[class^="cara-"]{
+    display: flex;
+    margin: 1em;
+    width: 150px;
+	height: 150px;
+	padding: 15px;
+	background: #FEFEF6;
+	border-radius: 10%;
+}
+/* estos pasos son para ubicar los puntos dentro del dado */
+/* Se usa flexbox para ubicar el punto */
+ .cara uno{
+    justify-content: center;
+    align-items: center;
+ }
+
+ /* Los puntos van separados y se usa flexbox en cada uno de ellos */
+ .cara-dos{
+	justify-content: space-between;
+}
+/* se usa la psudoclase nth-child() para alinear los 2 puntos y luego flexbox para enviarlo al final de la columna */
+.cara-dos .punto:nth-child(2){
+	align-self: flex-end;
+}
+
+.cara-tres{
+	justify-content: space-between;
+}
+.cara-tres .punto:nth-child(2){
+	align-self: center;
+}
+.cara-tres .punto:nth-child(3){
+	align-self: flex-end;
+}
+.cara-cuatro{
+	justify-content: space-between;
+}
+.cara-cuatro .columna {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.cara-cinco{
+	display: flex;
+	justify-content: space-between;
+}
+.cara-cinco .columna {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.cara-cinco .medio{
+	align-self: center;
+}
+.cara-seis{
+	display: flex;
+	justify-content: space-between;
+}
+.cara-seis .columna{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+/* Se crea el punto */
+.punto {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: black;
+	box-shadow: inset 0 3px #111, inset 0 -3px #555;
+}
